@@ -7,7 +7,7 @@ class App extends Component {
    
     state = {
         currentUser : null,
-        userInfo : null,
+        data : null,
     }
    
     setCurrentUser = (userInfo) => {
@@ -30,13 +30,13 @@ class App extends Component {
     }
 
     render(){
-        const { currentUser, userInfo } = this.state;
+        const { currentUser, data } = this.state;
         console.log(currentUser);
         return ( 
             <div>
                 <Header currentUser={currentUser} />
                 <Switch>
-                    <Route exact path='/' render={() => <HomePage currentUser={currentUser} userInfo={userInfo}/>} />
+                    <Route exact path='/' render={() => <HomePage currentUser={currentUser} data={data}/>} />
                     <Route 
                         exact path='/login'
                         render={() => currentUser ? (

@@ -1,7 +1,8 @@
 import React from 'react'
 import './HomePage.css'
 
-const HomePage = ({ currentUser }) => {
+const HomePage = ({ currentUser, data }) => {
+    console.log(data)
     return ( 
         <React.Fragment>
         <div className="bg-main" >
@@ -11,7 +12,14 @@ const HomePage = ({ currentUser }) => {
             </div>
          ) : (
              <div className="logged-in-container">
-                <p style={{color: 'yellow'}}> hello { currentUser}.  thanks for logging in.</p>   
+                <p style={{color: 'yellow'}}> hello { currentUser}.  thanks for logging in.</p> 
+                <p style={{color: 'yellow'}}> this is what we know about you : </p>
+                <p style={{color: 'yellow'}}> status : {data.status} </p>
+                <p style={{color: 'yellow'}}> id : {data.user._id} </p>
+                <p style={{color: 'yellow'}}> username : {data.user.username} </p>
+                <p style={{color: 'yellow'}}> admin : {data.user.admin ? 'true' : 'false'} </p>
+                 
+
             </div>
          )
         }

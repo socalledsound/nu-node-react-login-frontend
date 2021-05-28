@@ -31,7 +31,7 @@ class SignInPage extends Component {
                             password : '',
                             errors : {},
                            });
-            // setCurrentUser(values);
+            setCurrentUser(values);
 
 
         } else {
